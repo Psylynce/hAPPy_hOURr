@@ -1,4 +1,28 @@
 HAPPyHOURr::Application.routes.draw do
+
+  get "search/index"
+
+ # get "home/index"
+
+  root to: "home#index"
+
+  #resources :profiles
+
+  #resources :bars
+
+  #resources :home, :only => [:show]
+ # get 'home', to: 'home#show'
+  #root :to => redirect('/home/index')
+#  resources :bars do
+#    resources :time
+#  end
+  get '/bars/:id', to: 'bars#show', as:'bar'
+#  resources :search
+#  resources :profiles, controller: 'users'
+  get '/profiles/:id', to: 'profiles#show', as:'user'
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,4 +79,7 @@ HAPPyHOURr::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+
+
+
 end
