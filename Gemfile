@@ -9,7 +9,12 @@ gem 'sqlite3'
 
 
 group :development, :test do
-	gem 'debugger'
+	gem 'sqlite3'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
 end
 
 # Gems used only for assets and not required
