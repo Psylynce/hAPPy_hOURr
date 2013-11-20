@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @bar.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @bar.name %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @bar.contact %>
+</p>
+
+<p>
+  <b>Area:</b>
+  <%= @bar.area %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @bar.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_bar_path(@bar) %> |
+<%= link_to 'Back', bars_path %>
