@@ -19,7 +19,7 @@ group :assets do
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
-
+#this is james
 gem 'jquery-rails'
 
 # Use unicorn as the web server
@@ -30,7 +30,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-
+#jamez waz here
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
