@@ -1,6 +1,6 @@
 HAPPyHOURr::Application.routes.draw do
 
-  get "search/index"
+  get "search/", to: 'search#index', as: 'search'
 
   #get "home/index"
 

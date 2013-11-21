@@ -13,12 +13,10 @@ class BarsController < ApplicationController
   # GET /bars/1
   # GET /bars/1.json
   def show
-    @bar = Bar.find(params[:id])
+    #@bar = Bar.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @bar }
-    end
+    @id = params[:id]
+    render :text => params[:id]
   end
 
   # GET /bars/new
