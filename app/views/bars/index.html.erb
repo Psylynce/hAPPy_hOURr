@@ -6,6 +6,8 @@
     <th>Name</th>
     <th>Contact</th>
     <th>Area</th>
+    <th>Start Time</th>
+    <th>End Time</th>        
     <th>Comments</th>
     <th></th>
     <th></th>
@@ -18,10 +20,12 @@
     <td><%= bar.name %></td>
     <td><%= bar.contact %></td>
     <td><%= bar.area %></td>
+    <td><%= bar.start_time %></td>
+    <td><%= bar.end_time %></td>
     <td><%= bar.comments %></td>
-    <td><%= link_to 'Show', bar %></td>
+<!--    <td><%= link_to 'Show', bar %></td>
     <td><%= link_to 'Edit', edit_bar_path(bar) %></td>
-    <td><%= link_to 'Destroy', bar, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Destroy', bar, confirm: 'Are you sure?', method: :delete %></td> -->
   </tr>
 <% end %>
 </table>

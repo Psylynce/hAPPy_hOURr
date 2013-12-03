@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+bar1 = Bar.create(name: 'Aji', start_time: 3, end_time: 6, contact: '(303)442-3464', length: 3, area: 0)

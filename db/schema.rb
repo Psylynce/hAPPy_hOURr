@@ -11,12 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115193833) do
+ActiveRecord::Schema.define(:version => 20131202223909) do
 
   create_table "bars", :force => true do |t|
-    t.integer  "rating"
-    t.string   "time"
-    t.string   "info"
+    t.string   "name"
+    t.string   "contact"
+    t.integer  "area"
+    t.float    "start_time"
+    t.float    "end_time"
+    t.float    "length"
+    t.string   "comments"
+    t.float    "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "name"
+    t.string   "ratings"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

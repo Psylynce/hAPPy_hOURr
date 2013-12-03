@@ -8,7 +8,7 @@ HAPPyHOURr::Application.routes.draw do
 
   #resources :profiles
 
-  #resources :bars
+  resources :bars
 
   #resources :home, :only => [:show]
  # get 'home', to: 'home#show'
