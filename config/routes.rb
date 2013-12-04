@@ -1,5 +1,7 @@
 HAPPyHOURr::Application.routes.draw do
 
+  get "users/new"
+
   get "search/", to: 'search#index', as: 'search'
 
   #get "home/index"
@@ -80,6 +82,7 @@ HAPPyHOURr::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-
+  resources :users
+  match '/signup', to: 'users#new', via: 'get'
 
 end

@@ -42,5 +42,6 @@ group :test do
 end
 
 gem 'haml'
+gem 'bcrypt-ruby', '3.0.1'
 
 #This is toms edit
