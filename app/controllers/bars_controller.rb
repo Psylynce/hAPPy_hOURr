@@ -15,7 +15,10 @@ class BarsController < ApplicationController
   def show
     @bar = Bar.find(params[:id])
 
-    @id = params[:id]
+    @area_num = params[:area]
+    if @area_num == 0
+      @area = "Downtown"
+    end
     #render :text =>  #params[:id]
   end
 
