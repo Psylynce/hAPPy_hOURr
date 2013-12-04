@@ -45,3 +45,5 @@ gem 'haml'
 gem 'bcrypt-ruby', '3.0.1'
 
 #This is toms edit
+
+gem 'strong_parameters'

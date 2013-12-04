@@ -16,7 +16,7 @@ class BarsController < ApplicationController
     @bar = Bar.find(params[:id])
 
     @id = params[:id]
-    render :text => params[:id]
+    #render :text =>  #params[:id]
   end
 
   # GET /bars/new
