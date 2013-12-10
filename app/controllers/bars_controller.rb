@@ -1,9 +1,21 @@
 class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
-  def index
-    @bars = Bar.all
 
+  def index
+
+     # Get Bar areas
+    @areas = Bar.all_areas
+    @selected_areas = params[:areas] ||session[:areas] || {}
+    if @selected_areas == {}
+      @selected_areas = Hash[@areas.map {|area| [area, area]}]
+    end
+    
+    if params[:areas] != session[:areas] 
+      session[:areas] = @selected_areas
+      redirect_to :areas => @selected_areas and return
+    end
+    @bars = Bar.find_all_by_area(@selected_areas.keys)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }

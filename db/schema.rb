@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20131204045646) do
   create_table "bars", :force => true do |t|
     t.string   "name"
     t.string   "contact"
-    t.integer  "area"
+    t.string   "area"
     t.float    "start_time"
     t.float    "end_time"
     t.float    "length"
