@@ -31,7 +31,6 @@ class BarsController < ApplicationController
     if @area_num == 0
       @area = "Downtown"
     end
-    #render :text =>  #params[:id]
   end
 
   # GET /bars/new
