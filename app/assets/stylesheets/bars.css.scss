@@ -1,3 +1,147 @@
 // Place all the styles related to the Bars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+$light_grey: #e4e4e4;
+$medium_grey: #a8a8a8;
+$dark_grey: #676767;
+$darker_grey: #2a2a2a;
+$off_white: #ededed;
+$light_blue: #2ba8ec;
+$dark_blue: #1e75a5;
+
+.searchForm{
+	width: 500px;
+	background: $light_grey;
+	border: 1px solid $medium_grey;
+	@include border-radius(4px);
+	position: relative;
+	left: 50px;
+	.form_title{
+		background: $off_white;
+		margin: 0;
+		text-align: center;
+		height: 50px;
+		position: relative;
+		top: -16px;
+		line-height: 1.75;
+		border-bottom: 1px solid $medium_grey;
+	}
+	div{
+		height: 100px;
+		.filter_label{
+			color: $darker_grey;
+		}
+	}
+	#Area{
+		width: 90%;
+		margin: 0 auto;
+	}
+	#Time{
+		width: 90%;
+		margin: 10px auto;
+	}
+	#Search{
+		height: 75px;
+		width: 50%;
+		margin: 0 auto;
+	}
+	.checkbox_holder{
+		width: 381px;
+		margin: 0 auto;
+		height: 50px;
+	}
+	.check_button{
+		display: inline-block;
+		height: 50px;
+		margin: 0;
+	    background-color:$off_white;
+	    border-top: 1px solid $dark_grey;
+	    border-right: 1px solid $dark_grey;
+	    border-bottom: 1px solid $dark_grey;
+	    float: left;
+	    input[type="checkbox"]{
+	    	display: none;
+	    }
+	    label {
+		    float:left;
+		    width:75px;
+		    span {
+			    text-align: center;
+			    line-height: 3.55;
+			    display: block;
+			    height: 50px;
+			}
+		}
+		input:checked{
+			border: 1px solid $dark_blue;
+		}
+		input:checked + span {
+		    background-color: $light_blue;
+		    color: $off_white;
+		}
+	}
+	.check_button:first-child{
+		border-left: 1px solid $dark_grey;
+		border-top-left-radius: 4px;
+		-webkit-border-top-left-radius: 4px;
+		-moz-border-top-left-radius: 4px;
+		-o-border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		-webkit-border-bottom-left-radius: 4px;
+		-moz-border-bottom-left-radius: 4px;
+		-o-border-bottom-left-radius: 4px;
+	}
+	.check_button:last-child{
+		border-top-right-radius: 4px;
+		-webkit-border-top-right-radius: 4px;
+		-moz-border-top-right-radius: 4px;
+		-o-border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		-webkit-border-bottom-right-radius: 4px;
+		-moz-border-bottom-right-radius: 4px;
+		-o-border-bottom-right-radius: 4px;
+	}
+	.text_input_holder{
+		height: 30px;
+		width: 80%;
+		margin: 0 auto;
+		text-align: center;
+		.text_input{
+			background: none;
+			border: none;
+			width: 75px;
+			outline: none;
+		}
+		#endTime{
+			padding-left: 15px;
+		}
+	}
+	input[type="submit"]{
+		width: 100%;
+		height: 50px;
+		background: $light_blue;
+		border: none;
+		color: $light_grey;
+		outline: none;
+	}
+	input[type="submit"]:hover{
+		background: $dark_blue;
+		color: $off_white;
+	}
+}
+
+.bar_holder{
+	position: relative;
+	left: 60%;
+	top: -400px;
+	width: 700px;
+}
