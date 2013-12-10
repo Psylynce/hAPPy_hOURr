@@ -183,3 +183,20 @@ $dark_blue: #1e75a5;
 		}
 	}
 }
+.info_holder{
+	width: 80%;
+	float: right;
+	margin-top: 50px;
+	div{
+		display: inline-block;
+		vertical-align: top;
+	}
+	.pic{
+		width: 400px;
+		height: 400px;
+		background: $dark_grey;
+	}
+	.info{
+		margin-left: 20px;
+	}
+}
