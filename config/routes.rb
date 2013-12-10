@@ -10,7 +10,9 @@ HAPPyHOURr::Application.routes.draw do
 
   #resources :profiles
 
-  resources :bars
+  resources :bars do 
+    member {post :rate}
+  end
 
   #resources :home, :only => [:show]
  # get 'home', to: 'home#show'

@@ -125,13 +125,13 @@ $dark_blue: #1e75a5;
 		margin: 0 auto;
 		text-align: center;
 		.text_input{
-			background: none;
+			background: $off_white;
 			border: none;
+			@include border-radius(4px);
 			width: 75px;
+			height: 35px;
 			outline: none;
-		}
-		#endTime{
-			padding-left: 15px;
+			text-indent: 5px;
 		}
 	}
 	input[type="submit"]{

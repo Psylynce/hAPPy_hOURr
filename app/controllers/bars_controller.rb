@@ -81,6 +81,13 @@ class BarsController < ApplicationController
     end
   end
 
+  def rate
+    value = params[:type] == 'up' ? 1 : -1
+    @bar = Bar.find(params[:id])
+    @bar.add_or_update_evaluation(:rating, value, current_user)
+    redirect_to :back
+  end
+
   # DELETE /bars/1
   # DELETE /bars/1.json
   def destroy

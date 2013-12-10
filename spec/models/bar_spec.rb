@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Bar do
-  pending "add some examples to (or delete) #{__FILE__}"
+  	it 'is not valid without a name' do
+  		bar = Bar.new
+  		bar.should_not be_valid
+  	end
 end

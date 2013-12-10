@@ -39,7 +39,9 @@
                 <li><b>End Time:</b> <%= bar.end_time %></li>
                 <li><b>Area:</b> <%= bar.area %></li>
                 <li><b>Contact:</b> <%= bar.contact %></li>
-                <li><b>Rating:</b> <%= bar.rating %></li>
+                <li><b>Rating:</b> <%= bar.reputation_for(:rating).to_i %></li>
+                <!--<%= link_to "up", rate_bar_path(bar, type: "up"), method: "post" %>
+                <%= link_to "down", rate_bar_path(bar, type: "down"), method: "post" %> -->
             </ul>
         </div>
     <% end %>
