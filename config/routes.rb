@@ -11,6 +11,8 @@ HAPPyHOURr::Application.routes.draw do
   #resources :profiles
 
   resources :bars
+  resources :users
+  match '/signup', to: 'users#new', via: 'get'
 
   #resources :home, :only => [:show]
  # get 'home', to: 'home#show'
@@ -19,9 +21,15 @@ HAPPyHOURr::Application.routes.draw do
 #    resources :time
 #  end
   get '/bars/:id', to: 'bars#show', as:'bar'
+
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+
+#  get '/users/:id', to: 'users#show' as:'user'
 #  resources :search
 #  resources :profiles, controller: 'users'
-  get '/profiles/:id', to: 'profiles#show', as:'user'
+ # get '/profiles/:id', to: 'profiles#show', as:'user'
 
 
 
@@ -82,7 +90,5 @@ HAPPyHOURr::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-  resources :users
-  match '/signup', to: 'users#new', via: 'get'
-
+ 
 end

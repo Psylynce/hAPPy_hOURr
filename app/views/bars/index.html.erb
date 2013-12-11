@@ -1,35 +1,49 @@
-<h1>Listing bars</h1>
+<div class="searchForm">
+    <div class="form_title">
+        <h1>Search</h1>
+    </div>
+    <%= form_tag "bars", :method => :get, :id => "filter_bars" do %>
+        <div id="Area">
+            <h1 class="filter_label">Area:</h1>
+            <div class="checkbox_holder">
+                <%=@areas.each do |area| %>
+                    <div class="check_button">
+                        <label>
+                            <%= check_box_tag "areas[#{area}]", 1, @selected_areas.include?(area), :id => "areas_#{area}", :class => "styled_checkbox" %><span><%= area %></span>
+                        </label>
+                    </div>
+                <% end %>
+            </div>  
+        </div> 
+        <div id="Time">
+            <h1 class="filter_laebl">Time:</h1>
+            <div class="text_input_holder">
+                <input type="text" name="startTime" id="start" value="<%=@start_time%>" placeholder="Start Time" class="text_input"> to
+                <input type="text" name="endTime" id="endTime" value="<%=@end_time%>" placeholder="End Time" class="text_input">
+            </div>
+            <%= @start_time %>
+            <%= @end_time %> 
+        </div>
+        <div id="Search">
+            <%= submit_tag 'Search', :id => 'bars_filter'%>
+        </div>
+    <% end %>
+</div>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Contact</th>
-    <th>Area</th>
-    <th>Start Time</th>
-    <th>End Time</th>        
-    <th>Comments</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="bar_holder">
+    <% @bars.each do |bar| %>
+        <div class="bar_row">
+            <%=link_to bar.name, bar_path(bar.id) %>
+            <ul>
+                <li><b>Start Time:</b> <%= bar.start_time %></li>
+                <li><b>End Time:</b> <%= bar.end_time %></li>
+                <li><b>Area:</b> <%= bar.area %></li>
+                <li><b>Contact:</b> <%= bar.contact %></li>
+                <li><b>Rating:</b> <%= bar.reputation_for(:rating).to_i %></li>
 
-<% @bars.each do |bar| %>
-  <tr>
-    <td><%= bar.id %></td>
-    <td><%= bar.name %></td>
-    <td><%= bar.contact %></td>
-    <td><%= bar.area %></td>
-    <td><%= bar.start_time %></td>
-    <td><%= bar.end_time %></td>
-    <td><%= bar.comments %></td>
-<!--    <td><%= link_to 'Show', bar %></td>
-    <td><%= link_to 'Edit', edit_bar_path(bar) %></td>
-    <td><%= link_to 'Destroy', bar, confirm: 'Are you sure?', method: :delete %></td> -->
-  </tr>
-<% end %>
-</table>
-
-<br />
+            </ul>
+        </div>
+    <% end %>
+</div>  
 
 <%= link_to 'New Bar', new_bar_path %>
