@@ -1,3 +1,30 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	background: url('pearl_street_blur.jpg') no-repeat;
+	background-size: cover;
+}
+
+.home_info{
+	width: 750px;
+	height: auto;
+	position: relative;
+	top: 75px;
+	left: 5%;
+	color: #fff;
+	h1{
+		font-size: 24pt;
+		line-height: 1.25;
+	}
+	h4{
+		font-size: 14pt;
+		font-weight: 100;
+	}
+	.routing_button{
+		h1{
+			font-size: 22pt;
+			line-height: 2.5;
+		}
+	}
+}

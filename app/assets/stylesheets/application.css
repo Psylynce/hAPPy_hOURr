@@ -15,7 +15,9 @@ body{
 	width: 100%;
 	height: 50px;
 	margin: 0 auto;
-	background: #e4e4e4;
+	-webkit-box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);
+	-moz-box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);
+	box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);
 }
 .nav_bar ul{
 	margin: 0;
@@ -34,6 +36,14 @@ body{
 	font-size: 14pt;
 	line-height: 2.5;
 }
+.nav_bar ul li a{
+	color: #fff;
+	text-decoration: none;
+}
+.nav_bar ul li a:hover{
+	color: #ededed;
+	background: none;
+}
 .action_button:hover{
 	background: #2ba8ec;
 	color: #ededed;
@@ -43,4 +53,28 @@ body{
 	width: 500px;
 	border: none;
 	text-align: left;
+}
+#profile{
+	background: url('profile_hover.png') 20px center no-repeat;
+	background-size: 30px 30px;
+}
+#profile:hover{
+	background: url('profile_hover.png') 20px center no-repeat #2ba8ec;
+	background-size: 30px 30px;
+}
+
+.routing_button{
+	width: 300px;
+	height: 75px;
+	text-align: center;
+	background: #2ba8ec;
+	line-height: 2.5;
+	transition: 0.5s;
+}
+.routing_button:hover{
+	background: #1e75a5;
+}
+.routing_button h1 a{
+	text-decoration: none;
+	color: #ededed;
 }

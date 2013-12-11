@@ -25,7 +25,7 @@ HAPPyHOURr::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
-
+  match '/home', to: 'home#index', via: 'get'
 #  get '/users/:id', to: 'users#show' as:'user'
 #  resources :search
 #  resources :profiles, controller: 'users'
