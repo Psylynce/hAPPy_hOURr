@@ -15,23 +15,19 @@ class UsersController < ApplicationController
     end    
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def create
   	@user = User.new(user_params)
-  #	if @user.save
-  #		redirect_to @user
-  #	else
-  #		render 'new'
-  #	end
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'Bar was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end    
+  	if @user.save
+  		sign_in @user
+      flash[:success] = "Welcome to the Happy Hour App!"
+      redirect_to @user
+  	else
+  		render 'new'
+  	end 
   end
 
   private
@@ -39,4 +35,16 @@ class UsersController < ApplicationController
   	def user_params
   		params.require(:user).permit(:name, :email, :password, :password_confirmation)
   	end
+
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
+    end
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
 end
