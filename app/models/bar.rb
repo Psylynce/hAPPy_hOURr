@@ -6,6 +6,13 @@ class Bar < ActiveRecord::Base
 	#def initialize(attributes = nil)
 	#	super(attributes)
 	#end
+	def self.search(search)
+	  if search
+	    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+	  else
+	    find(:all)
+	  end
+	end
 
 	def self.all_areas
 		%w(Downtown The\ Hill South North East)

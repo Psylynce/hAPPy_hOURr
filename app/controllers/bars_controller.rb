@@ -14,7 +14,13 @@ class BarsController < ApplicationController
       session[:areas] = @selected_areas
       redirect_to :areas => @selected_areas and return
     end
-    @bars = Bar.find_all_by_area(@selected_areas.keys)
+    if params[:search] != nil
+      @bars = Bar.search(params[:search])
+      @selected_areas = Hash[@areas.map {|area| [area, area]}]
+    else
+      @bars = Bar.find_all_by_area(@selected_areas.keys)
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }
