@@ -38,11 +38,14 @@
 		color: #fff;
 		background: #2ba8ec;
 		border: none;
+		outline: none;
 		transition: 0.5s;
+		font-size: 16pt;
 	}
 	input[type="submit"]:hover{
 		background: #1e75a5;
 		border: none;
+		cursor: pointer;
 	}
 	p{
 		font-size: 14pt;

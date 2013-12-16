@@ -139,10 +139,27 @@ $dark_blue: #1e75a5;
 			background: $off_white;
 			border: none;
 			@include border-radius(4px);
-			width: 75px;
+			width: 95px;
 			height: 35px;
 			outline: none;
 			text-indent: 5px;
+			font-size: 12pt;
+		}
+		::-webkit-input-placeholder { /* WebKit browsers */
+		    color:    $light_blue;
+		    font-size: 12pt;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		    color:    $light_blue;
+		    font-size: 12pt;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+		    color:    $light_blue;
+		    font-size: 12pt;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10+ */
+		    color:    $light_blue;
+		    font-size: 12pt;
 		}
 	}
 	input[type="submit"]{
@@ -152,12 +169,14 @@ $dark_blue: #1e75a5;
 		border: none;
 		color: $light_grey;
 		outline: none;
-		text-indent: 40px;
+		text-indent: 80px;
 		transition: 0.5s;
+		font-size: 14pt;
 	}
 	input[type="submit"]:hover{
 		background: url('search_hover.png') 20px center no-repeat $dark_blue;
 		color: $off_white;
+		cursor: pointer;
 	}
 	::-webkit-input-placeholder { /* WebKit browsers */
     color:    $light_blue;
