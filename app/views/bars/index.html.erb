@@ -6,7 +6,7 @@
         <div id="Area">
             <h1 class="filter_label">Area:</h1>
             <div class="checkbox_holder">
-                <%=@areas.each do |area| %>
+                <% @areas.each do |area| %>
                     <div class="check_button">
                         <label>
                             <%= check_box_tag "areas[#{area}]", 1, @selected_areas.include?(area), :id => "areas_#{area}", :class => "styled_checkbox" %><span><%= area %></span>
