@@ -1,3 +1,77 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.signup{
+	width: 500px;
+	height: auto;
+	color: #fff;
+	position: relative;
+	top: 75px;
+	left: 5%;
+	input[type="text"]{
+		background: none;
+		border: none;
+		height: 55px;
+		line-height: 1;
+		outline: none;
+		font-size: 14pt;
+		color: #fff;
+	}
+	input[type="password"]{
+		background: none;
+		border: none;
+		height: 55px;
+		line-height: 1;
+		outline: none;
+		font-size: 14pt;
+		color: #fff;
+	}
+	input[type="text"]:focus{
+		background: rgba(255, 255, 255, 0.4);
+	}
+	input[type="password"]:focus{
+		background: rgba(255, 255, 255, 0.4);
+	}
+	input[type="submit"]{
+		width: 50%;
+		height: 50px;
+		color: #fff;
+		background: #2ba8ec;
+		border: none;
+		outline: none;
+		transition: 0.5s;
+		font-size: 16pt;
+	}
+	input[type="submit"]:hover{
+		background: #1e75a5;
+		border: none;
+		cursor: pointer;
+	}
+	p{
+		font-size: 14pt;
+		a{
+			text-decoration: none;
+			color: #2ba8ec;
+			transition: 0.5s;
+		}
+		a:hover{
+			color: #fff;
+		}
+	}
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff;
+    font-size: 14pt;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #fff;
+    font-size: 14pt;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #fff;
+    font-size: 14pt;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #fff;
+    font-size: 14pt;
+}
