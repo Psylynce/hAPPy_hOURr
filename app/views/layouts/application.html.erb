@@ -10,10 +10,17 @@
 	<div class="nav_bar">
 		<ul>
 			<li><%= link_to "Happy Hour", home_path %></li>
-			<li class="action_button"><%= link_to "Sign Up/Login", signin_path %></li>
-			<li id="profile" class="action_button"><%= link_to "Profile", user_path(:id) %></li>
+
+			<% if signed_in? %>
+				<li id="profile" class="action_button"><%= link_to "Profile", user_path(:id) %></li>
+				<li class="action_button"><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+			<% else %>
+				<li class="action_button"><%= link_to "Sign Up/Login", signin_path %></li>
+				<li id="profile" class="action_button"><%= link_to "Profile", signin_path %></li>
+				<%end%>
 		</ul>
 	</div>
+	
 	<%=yield%>
 </body>
 </html>

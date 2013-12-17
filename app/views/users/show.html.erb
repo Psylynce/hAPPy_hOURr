@@ -2,7 +2,10 @@
   <% provide(:title, 'Not found') %>
   No user with that ID has been found.
 <% else %>
-<h3>You are logged in as: <%=@user.name%></h3>
+	<h1>
+		<%= gravatar_for @user %>
+		<% @user.name %>
+	</h1>
 
 <%= link_to "Sign out", signout_path, method: "delete" %>
 <% end %>

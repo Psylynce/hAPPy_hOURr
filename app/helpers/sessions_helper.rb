@@ -14,14 +14,14 @@ module SessionsHelper
 	def signed_in?
 		!current_user.nil?
 	end
-
+	
 	def current_user=(user)
-		remember_token = User.encrypt(cookies[:remember_token])
-		@current_user ||= User.find_by_remember_token(remember_token) unless remember_token.nil?
+		user == current_user
 	end
 
 	def current_user
-		user == current_user
+		remember_token = User.encrypt(cookies[:remember_token])
+		@current_user ||= User.find_by_remember_token(remember_token) unless remember_token.nil?
 	end
 
 	def redirect_back_or(default)

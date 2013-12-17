@@ -1,6 +1,6 @@
 HAPPyHOURr::Application.routes.draw do
 
-  get "users/new"
+  #get "users/new"
 
   get "search/", to: 'search#index', as: 'search'
 
@@ -8,11 +8,8 @@ HAPPyHOURr::Application.routes.draw do
 
   root to: "home#index"
 
-  #resources :profiles
-
   resources :bars
   resources :users
-  match '/signup', to: 'users#new', via: 'get'
 
   #resources :home, :only => [:show]
  # get 'home', to: 'home#show'
@@ -23,8 +20,10 @@ HAPPyHOURr::Application.routes.draw do
   get '/bars/:id', to: 'bars#show', as:'bar'
 
   resources :sessions, only: [:new, :create, :destroy]
+  match 'signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+  
   match '/home', to: 'home#index', via: 'get'
 #  get '/users/:id', to: 'users#show' as:'user'
 #  resources :search
