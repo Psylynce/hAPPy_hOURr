@@ -20,8 +20,9 @@ class BarsController < ApplicationController
     else
       @bars = Bar.find_all_by_area(@selected_areas.keys)
     end
-
-    @bars = @bars.select {|bar| bar.start_time >= params[:startTime].to_f and bar.end_time <= params[:endTime].to_f}
+    if params[:startTime] != '' || params[:endTime] != ''
+      @bars = @bars.select {|bar| bar.start_time >= params[:startTime].to_f and bar.end_time <= params[:endTime].to_f}
+    end
 
     respond_to do |format|
       format.html # index.html.erb
