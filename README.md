@@ -1,3 +1,7 @@
 hAPPy_hOURr
 ===========
-This is Tom, I've been pushing shit under saasbook user. No idea why the fuck it doesnt show it as me...
+
+###What we didn't get to.
+
+* Email activation for user accounts
+* Like/Disliking Bars

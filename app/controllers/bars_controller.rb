@@ -43,11 +43,6 @@ class BarsController < ApplicationController
   def show
     @bar = Bar.find(params[:id])
     @comment = Comment.new
-#    @area_num = params[:area]
-#    if @area_num == 0
-#      @area = "Downtown"
-#    end
-    #render :text =>  #params[:id]
   end
 
   # GET /bars/new
