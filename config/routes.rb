@@ -1,5 +1,8 @@
 HAPPyHOURr::Application.routes.draw do
 
+  resources :comments
+
+
   #get "users/new"
 
   get "search/", to: 'search#index', as: 'search'

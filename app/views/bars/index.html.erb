@@ -35,8 +35,8 @@
         <div class="bar_row">
             <%=link_to bar.name, bar_path(bar.id) %>
             <ul>
-                <li><b>Start Time:</b> <%= bar.start_time %></li>
-                <li><b>End Time:</b> <%= bar.end_time %></li>
+                <li><b>Start Time:</b> <%= bar.convert_to_time('start') %></li>
+                <li><b>End Time:</b> <%= bar.convert_to_time('end') %></li>
                 <li><b>Area:</b> <%= bar.area %></li>
                 <li><b>Contact:</b> <%= bar.contact %></li>
                 <% if current_user && !current_user.voted_for?(bar) %>

@@ -1,21 +1,3 @@
-
-<div class="info_holder">
-	<div class="pic"></div>
-	<div class="info">
-		<h1><%=@bar.name %></h1>			
-		<h4>Start Time: <%=@bar.start_time%></h4>
-		<h4>End Time: <%=@bar.end_time%></h4>
-		<h4>Contact: <%=@bar.contact%></h4>
-		<h4>Area: <%=@bar.area%></h4>
-	</div>
-</div>
-
-<div>
-  <% @bar.comments.each do |comment| %>
-    <%= comment.comment %>
-  <% end %>
-</div>
-
 <%= form_for(@comment) do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
@@ -34,11 +16,8 @@
     <%= f.text_field :comment %>
   </div>
   <div class="field">
-    <%#= f.label :user_id %><br />
-    <%#= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.hidden_field :bar_id, value: @bar.id %>
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

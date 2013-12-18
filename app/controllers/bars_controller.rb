@@ -32,6 +32,8 @@ class BarsController < ApplicationController
       @bars = Bar.find_all_by_area(@selected_areas.keys)
     end
 
+    @bars = @bars.select {|bar| bar.start_time >= params[:startTime].to_f and bar.end_time <= params[:endTime].to_f}
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }
@@ -45,20 +47,13 @@ class BarsController < ApplicationController
     redirect_to :back, notice: "Thank you for voting"
   end
 
-  def convert_to_time
-    @string = self.to_s
-    if @string.match(/.0/)
-      @string.gsub(/.0/, ":00")
-    else
-      @string.gsub(/.5/, ":30" )
-    end
-  end
+  
 
   # GET /bars/1
   # GET /bars/1.json
   def show
     @bar = Bar.find(params[:id])
-
+    @comment = Comment.new
 #    @area_num = params[:area]
 #    if @area_num == 0
 #      @area = "Downtown"
