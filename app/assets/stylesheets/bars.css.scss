@@ -25,9 +25,9 @@ $dark_blue: #1e75a5;
 	-moz-box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);
 	box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);;
 	@include border-radius(4px);
-	position: relative;
+	position: fixed;
 	left: 50px;
-	top: 50px;
+	top: 100px;
 	.form_title{
 		background: $off_white;
 		margin: 0;
@@ -197,14 +197,15 @@ $dark_blue: #1e75a5;
 }
 
 .bar_holder{
-	position: relative;
-	top: -350px;
-	float: right;
+	position: absolute;
+	top: 100px;
+	right: 2%;
 	margin-right: 50px;
 	width: 700px;
 	-webkit-box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);
 	-moz-box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);
 	box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);
+	padding-bottom: 50px;
 	.bar_row{
 		width: 100%;
 		height: 100px;

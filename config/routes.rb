@@ -30,5 +30,7 @@ HAPPyHOURr::Application.routes.draw do
 #  resources :profiles, controller: 'users'
   get '/users/:id', to: 'users#show', as:'user'
 
- 
+  resources :bars do
+    member { post :rate}
+  end
 end

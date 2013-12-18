@@ -10,6 +10,17 @@ class BarsController < ApplicationController
       @selected_areas = Hash[@areas.map {|area| [area, area]}]
     end
     
+    # barList = Bar.find(:all)
+    # @start_time = params[:startTime]
+    # @end_time = params[:endTime]
+    # newList = []
+
+    # barList.each do |bar| {
+    #   if bar.start_time >= @start_time && bar.start_time <= @end_time
+    #     newList << bar
+    #   end
+    # }
+
     if params[:areas] != session[:areas] 
       session[:areas] = @selected_areas
       redirect_to :areas => @selected_areas and return
@@ -24,6 +35,22 @@ class BarsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }
+    end
+  end
+
+  def rate
+    value = params[:type] == "up" ? 1 : -1
+    @bar = Bar.find(params[:id])
+    @bar.add_or_update_evaluation(:ratings, value, current_user)
+    redirect_to :back, notice: "Thank you for voting"
+  end
+
+  def convert_to_time
+    @string = self.to_s
+    if @string.match(/.0/)
+      @string.gsub(/.0/, ":00")
+    else
+      @string.gsub(/.5/, ":30" )
     end
   end
 

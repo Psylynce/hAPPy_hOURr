@@ -17,6 +17,14 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s)
 	end
 
+	has_many :evaluations, class_name: "RSEvaluation", as: :source
+
+	has_reputation :ratings, source: {reputation: :ratings, of: :bars}, aggregated_by: :sum
+
+	def voted_for?(bar)
+	  evaluations.where(target_type: bar.class, target_id: bar.id).present?
+	end
+
 	private
 
 		def create_remember_token

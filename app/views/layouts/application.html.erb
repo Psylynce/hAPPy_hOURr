@@ -12,12 +12,12 @@
 			<li><%= link_to "Happy Hour", home_path %></li>
 
 			<% if signed_in? %>
-				<li id="profile" class="action_button"><%= link_to "Profile", current_user %></li>
 				<li class="action_button"><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+				<li id="profile" class="action_button"><%= link_to "Profile", current_user %></li>
 			<% else %>
 				<li class="action_button"><%= link_to "Sign Up/Login", signin_path %></li>
 				<li id="profile" class="action_button"><%= link_to "Profile", signin_path %></li>
-				<%end%>
+			<%end%>
 		</ul>
 	</div>
 	
