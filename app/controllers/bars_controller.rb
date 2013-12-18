@@ -9,17 +9,6 @@ class BarsController < ApplicationController
     if @selected_areas == {}
       @selected_areas = Hash[@areas.map {|area| [area, area]}]
     end
-    
-    # barList = Bar.find(:all)
-    # @start_time = params[:startTime]
-    # @end_time = params[:endTime]
-    # newList = []
-
-    # barList.each do |bar| {
-    #   if bar.start_time >= @start_time && bar.start_time <= @end_time
-    #     newList << bar
-    #   end
-    # }
 
     if params[:areas] != session[:areas] 
       session[:areas] = @selected_areas
