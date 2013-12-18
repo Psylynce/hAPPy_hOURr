@@ -72,7 +72,7 @@ bar1 = Bar.create([
 	# The Hill -----------------------------------------------------------------------------------------------------------------
 	{name: 'Half Fast Subs', start_time: 5, end_time: 7, contact: '(303)449-0404', length: 2, area: 'The Hill', rating: 0},
 	{name: 'The Sink', start_time: 3, end_time: 6, contact: '(303)444-7465', length: 3, area: 'The Hill', rating: 0},
-	{:name=>"Cosmo's Pizza", :area=>"The Hill", :contact=>"(303)447-3278", :start_time=>0, :end_time=>0, :rating=>0}, 
+	{:name=>"Cosmo's Pizza", :area=>"The Hill", :contact=>"(303)447-3278", :start_time=>3, :end_time=>5, :rating=>0}, 
 	{:name=>"Fat Cat Noodle House & Sake Bar", :area=>"The Hill", :contact=>"(303)448-9517", :start_time=>5, :end_time=>7, :rating=>0}, 
 	{:name=>"Goose, The", :area=>"The Hill", :contact=>"(720)565-0540", :start_time=>3, :end_time=>6, :rating=>0},  
 	{:name=>"Hapa On the Hill", :area=>"The Hill", :contact=>"(303)447-9883", :start_time=>9, :end_time=>11, :rating=>0}, 

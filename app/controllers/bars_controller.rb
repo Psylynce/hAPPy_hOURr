@@ -23,7 +23,9 @@ class BarsController < ApplicationController
     if params[:startTime] != '' || params[:endTime] != ''
       @bars = @bars.select {|bar| bar.start_time >= params[:startTime].to_f and bar.end_time <= params[:endTime].to_f}
     end
-
+    if @bars.empty?
+      @bars = Bar.find_all_by_area(@selected_areas.keys)
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }
