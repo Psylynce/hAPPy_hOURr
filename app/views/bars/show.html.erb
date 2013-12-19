@@ -7,6 +7,9 @@
 		<h4>End Time: <%=@bar.convert_to_time('end')%></h4>
 		<h4>Contact: <%=@bar.contact%></h4>
 		<h4>Area: <%=@bar.area%></h4>
+    <div class="span8">
+      <%= render 'follow_form' if signed_in? %>
+    </div>   
 	</div>
 </div>
 

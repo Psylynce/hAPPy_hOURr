@@ -4,7 +4,8 @@ class Bar < ActiveRecord::Base
 	has_reputation :ratings, source: :user, aggregated_by: :average
 
 	has_many :comments
-
+	acts_as_followable
+	
 	#def initialize(attributes = nil)
 	#	super(attributes)
 	#end

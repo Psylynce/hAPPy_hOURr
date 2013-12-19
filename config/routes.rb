@@ -34,6 +34,10 @@ HAPPyHOURr::Application.routes.draw do
   get '/users/:id', to: 'users#show', as:'user'
 
   resources :bars do
-    member { post :rate}
+    member do
+      post :rate
+      get :follow
+      get :unfollow
+    end
   end
 end

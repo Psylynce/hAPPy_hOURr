@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.0.0"
+ruby "1.9.3"
 
 gem 'rails', '3.2.13'
 
@@ -20,7 +20,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
 end
 
 # Gems used only for assets and not required
@@ -52,3 +52,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem 'strong_parameters'
+gem 'acts_as_follower', '~> 0.1.1'

@@ -39,7 +39,23 @@ class BarsController < ApplicationController
     redirect_to :back, notice: "Thank you for voting"
   end
 
-  
+  def follow
+    @bar = Bar.find(params[:id])
+
+    if current_user
+      current_user.follow(@bar)
+      redirect_to :back
+    end
+  end
+
+  def unfollow
+    @bar = Bar.find(params[:id])
+
+    if current_user
+      current_user.stop_following(@bar)
+      redirect_to :back
+    end
+  end
 
   # GET /bars/1
   # GET /bars/1.json
