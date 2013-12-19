@@ -3,7 +3,7 @@ class CreateBars < ActiveRecord::Migration
     create_table :bars do |t|
       t.string :name
       t.string :contact
-      t.integer :area
+      t.string :area
       t.float :start_time
       t.float :end_time
       t.float :length
