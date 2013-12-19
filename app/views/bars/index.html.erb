@@ -37,10 +37,6 @@
                 <li><b>End Time:</b> <%= bar.convert_to_time('end') %></li>
                 <li><b>Area:</b> <%= bar.area %></li>
                 <li><b>Contact:</b> <%= bar.contact %></li>
-                <% if current_user && !current_user.voted_for?(bar) %>
-                  | <%= link_to "up", rate_bar_path(bar, type: "up"), method: "post" %>
-                  | <%= link_to "down", rate_bar_path(bar, type: "down"), method: "post" %>
-                <% end %>
             </ul>
         </div>
     <% end %>
