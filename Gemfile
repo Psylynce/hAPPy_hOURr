@@ -1,16 +1,15 @@
 source 'https://rubygems.org'
-ruby "1.9.3"
+ruby "2.0.0"
 
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'activerecord-reputation-system', :require => 'reputation_system'
 
 group :test do
-        gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
 
@@ -20,7 +19,8 @@ group :development, :test do
 end
 
 group :production do
-  #gem 'pg'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Gems used only for assets and not required
