@@ -1,6 +1,8 @@
 hAPPy_hOURr
 ===========
 
+###James Ontiveros, Tom Spooner, Justin Powell
+
 Happy Hour is a web app that displays restaurants and bars with their happy hour times that exist around Boulder. We have the bars separated by their area, such as "Downtown" or "The Hill". We allow the user to filter the bars by their area as well as start time and end time, a user can also look for the name of a bar in the search field. A user can also look at the Bar's profile page which displays some information about the bars and some comments, that are anonymous. A user can login or sign up and have a profile where they can follow or unfollow bars. 
 
 ###Web Crawler
