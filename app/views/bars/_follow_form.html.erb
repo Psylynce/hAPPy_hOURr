@@ -1,0 +1,7 @@
+<div id="follow_form">
+	<% if current_user.following?(@bar) %>
+		<%= link_to "Unfollow", unfollow_bar_path(@bar) %>
+	<%else%>
+		<%= link_to "Follow", follow_bar_path(@bar) %>
+	<% end %>
+</div>
